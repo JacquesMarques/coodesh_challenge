@@ -33,6 +33,9 @@ gem "bootsnap", require: false
 # Mongoid is an ODM (Object Document Mapper) Framework for MongoDB, written in Ruby
 gem 'mongoid', '~> 8.0', '>= 8.0.3'
 
+# rn web scraping framework written in Ruby and based on Capybara/Nokogiri
+gem 'kimurai', '~> 1.4'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
