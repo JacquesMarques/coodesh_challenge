@@ -1,0 +1,37 @@
+version: "2"
+
+services:
+
+  mongo-service:
+    image: "mongo"
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongodb:/var/lib/mongodb/data"
+    networks:
+      - rails-api_network
+
+  rails-api:
+    build:
+      context: .
+    image: rails-api
+    volumes:
+      - .:/app
+      - rails-docker_bundle:/usr/local/bundle
+    ports:
+      - 3000:3000
+    networks:
+      - rails-api_network
+    stdin_open: true
+    tty: true
+    env_file:
+      - ${ENV_FILE:-.env}
+    depends_on:
+      -  mongo-service
+
+volumes:
+  mongodb:
+  rails-docker_bundle:
+
+networks:
+  rails-api_network:
