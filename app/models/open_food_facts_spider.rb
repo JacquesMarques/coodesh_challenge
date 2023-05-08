@@ -11,7 +11,6 @@ class OpenFoodFactsSpider < Kimurai::Base
     response.xpath("//ul[@class='products']//li/a").each do |a|
       relative_url = a[:href]
       request_to :parse_product_page, url: absolute_url(relative_url, base: url)
-      break
     end
   end
 
@@ -20,7 +19,8 @@ class OpenFoodFactsSpider < Kimurai::Base
     product = Product.find_or_initialize_by(code: item[:code])
     product.attributes = item
     product.save
-    puts product.errors.messages if product.errors.present?
+
+    ErrorMailer.with(message: product.errors.messages.to_sentence) if product.errors.present?
   end
 
   private
