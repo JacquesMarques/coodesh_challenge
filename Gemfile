@@ -56,11 +56,6 @@ end
 group :test do
   # Strategies for cleaning databases. Can be used to ensure a clean slate for testing.
   gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
-  # Code coverage for Ruby
-  gem 'simplecov', '~> 0.22.0', require: false
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 5.3'
 end
-
-
-
