@@ -3,4 +3,81 @@ info:
   title: Fullstack Challenge 20201026
   description: CRUD Products
   version: '0.1'
-
+host: localhost:300
+schemes:
+  - "http"
+paths:
+  "/products":
+    get:
+      description: "Return a list of products"
+      operationId: getProducts
+      parameters:
+        - in: query
+          name: page
+          description: number of page to return
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: per
+          description: max number of records to return
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: A list of products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products'
+  "/product/:code":
+    get:
+      description: "Return a product"
+      operationId: getProduct
+      parameters:
+        - in: path
+          name: code
+          description: code of a product
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: A list of products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        code:
+          type: string
+        barcode:
+          type: string
+        status:
+          type: string
+        imported_t:
+          type: string
+          format: date-time
+        url:
+          type: string
+        product_name:
+          type: string
+        quantity:
+          type: string
+        categories:
+          type: string
+        packaging:
+          type: string
+        brands:
+          type: string
+        image_url:
+          type: string
+    Products:
+      type: array
+      items:
+        $ref: '#/components/schemas/Product'
