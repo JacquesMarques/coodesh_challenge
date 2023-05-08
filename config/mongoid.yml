@@ -178,7 +178,7 @@ test:
     default:
       database: coodesh_challenge_test
       hosts:
-        - localhost:27017
+        - mongo-service:27017
       options:
         read:
           mode: :primary

@@ -57,8 +57,6 @@ group :test do
   gem 'simplecov', '~> 0.22.0', require: false
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 5.3'
-  # Library for stubbing HTTP requests in Ruby.
-  gem 'webmock', '~> 3.18', '>= 3.18.1'
 end
 
 
