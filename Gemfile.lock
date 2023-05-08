@@ -1,3 +1,25 @@
+GIT
+  remote: https://github.com/n-studio/kimuraframework.git
+  revision: 545ced3a603bdf4b2e4ebc51825cfd5259a436a2
+  branch: dev/ruby-3
+  specs:
+    kimurai (1.4.1)
+      activesupport
+      addressable
+      capybara (>= 2.15, < 4.0)
+      capybara-mechanize
+      cliver
+      headless
+      murmurhash3
+      nokogiri
+      pmap
+      poltergeist
+      pry
+      rbcat (~> 0.2)
+      selenium-webdriver
+      thor
+      whenever
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -123,21 +145,6 @@ GEM
     io-console (0.6.0)
     irb (1.6.3)
       reline (>= 0.3.0)
-    kimurai (1.4.0)
-      activesupport
-      capybara (>= 2.15, < 4.0)
-      capybara-mechanize
-      cliver
-      headless
-      murmurhash3
-      nokogiri
-      pmap
-      poltergeist
-      pry
-      rbcat (~> 0.2)
-      selenium-webdriver
-      thor
-      whenever
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -301,7 +308,7 @@ DEPENDENCIES
   database_cleaner (~> 2.0, >= 2.0.2)
   debug
   factory_bot_rails (~> 6.2)
-  kimurai (~> 1.4)
+  kimurai (~> 1.4)!
   mongoid (~> 8.0, >= 8.0.3)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)

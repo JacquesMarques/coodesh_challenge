@@ -34,7 +34,7 @@ gem "bootsnap", require: false
 gem 'mongoid', '~> 8.0', '>= 8.0.3'
 
 # rn web scraping framework written in Ruby and based on Capybara/Nokogiri
-gem 'kimurai', '~> 1.4'
+gem 'kimurai', '~> 1.4', git: 'https://github.com/n-studio/kimuraframework.git', branch: 'dev/ruby-3'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
