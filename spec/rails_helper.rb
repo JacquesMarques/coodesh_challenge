@@ -81,4 +81,6 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  config.include RequestSpecHelper, type: :request
 end
